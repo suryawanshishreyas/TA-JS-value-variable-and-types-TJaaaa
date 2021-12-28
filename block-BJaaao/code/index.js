@@ -37,7 +37,7 @@ alert(`The sum of ${num1} and ${num2} is ${num1 + num2}`)
 */
 let userName= prompt("What is your name?");
 let userProfession= prompt("What is your Profession?");
-let isAdult=prompt("Are you an Adult?");
+let isAdult=confirm("Are you an Adult?");
 alert(`I am ${userName} a ${userProfession}`);
 console.log(`I am ${userName} a ${userProfession}`);
 alert(`Username: ${userName}
