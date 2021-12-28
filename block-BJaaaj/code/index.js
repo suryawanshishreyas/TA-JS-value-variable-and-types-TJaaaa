@@ -19,13 +19,11 @@ alert(firstName + "" + lastName);
 const fullName="John Snow";
 
 // Declare three variables `name,` `newUser` and `isAdmin`.
-let name;
-let newUser;
-let isAdmin;
+let name,newUser,isAdmin;
 // Assign your name as the value of `name`.
-let name="Shreyas";
+name= "Shreyas";
 // Assign the value of `name` to `newUser`.
-name=newUser;
+newUser=name;
 // Set the value of `isAdmin` to `true`.
 isAdmin=true;
 // Alert the values of all the three variables.
