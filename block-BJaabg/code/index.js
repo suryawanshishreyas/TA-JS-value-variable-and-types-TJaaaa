@@ -17,28 +17,44 @@ var amount = 0;
 let purchaseAmount= PHONE_PRICE;
 let calculated_purchaseAmount = purchaseAmount + purchaseAmount * TAX_RATE;
 let i;
-while(bank_balance!=0){
-    amount=amount + PHONE_PRICE;
-    for(i=1; i<4; i++){
-        purchaseAmount= PHONE_PRICE;
-        if(purchaseAmount < SPENDING_THRESHOLD){
-            purchaseAmount = purchaseAmount + ACCESSORY_PRICE;
-            calculated_purchaseAmount = purchaseAmount + purchaseAmount * TAX_RATE;
-            alert(`Calculated purchase amount is $ ${calculated_purchaseAmount}`);
-        }
-        else{
-            alert("no money");
-        }
-    }
-    bank_balance=bank_balance -calculated_purchaseAmount;
-    if(bank_balance < calculated_purchaseAmount){
-        alert("You cannot afford it");
-    }
-    else{
-        alert("Phone bought");
-    }
+// while(bank_balance!=0){
+//     amount=amount + PHONE_PRICE;
+//     for(i=1; i<4; i++){
+//         purchaseAmount= PHONE_PRICE;
+//         if(purchaseAmount < SPENDING_THRESHOLD){
+//             purchaseAmount = purchaseAmount + ACCESSORY_PRICE;
+//             calculated_purchaseAmount = purchaseAmount + purchaseAmount * TAX_RATE;
+//             alert(`Calculated purchase amount is $ ${calculated_purchaseAmount}`);
+//         }
+//         else{
+//             alert("no money");
+//         }
+//     }
+//     bank_balance=bank_balance -calculated_purchaseAmount;
+//     if(bank_balance < calculated_purchaseAmount){
+//         alert("You cannot afford it");
+//     }
+//     else{
+//         alert("Phone bought");
+//     }
     
+// }
+while(amount<bank_balance){
+    amount+= PHONE_PRICE;
+    if(amount<SPENDING_THRESHOLD){
+        amount+=ACCESSORY_PRICE;
+    }
 }
+let tax= amount * TAX_RATE;
+let taxedAmount = amount + tax;
+console.log(`$ ${taxedAmount}`);
+if(taxedAmount < bank_balance){
+    alert("You can afford it");
+}
+else{
+    alert("you cant afford it");
+}
+
 // your code goes here
 
 // ⛑ Answer of the above will `$334.76`.
