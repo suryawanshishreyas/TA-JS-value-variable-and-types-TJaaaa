@@ -10,9 +10,35 @@ const SPENDING_THRESHOLD = 200;
 const TAX_RATE = 0.08;
 const PHONE_PRICE = 99.99;
 const ACCESSORY_PRICE = 9.99;
+var quantityofPhone;
 
 var bank_balance = 303.91;
 var amount = 0;
+let purchaseAmount= PHONE_PRICE;
+let calculated_purchaseAmount = purchaseAmount + purchaseAmount * TAX_RATE;
+let i;
+while(bank_balance!=0){
+    amount=amount + PHONE_PRICE;
+    for(i=1; i<4; i++){
+        purchaseAmount= PHONE_PRICE;
+        if(purchaseAmount < SPENDING_THRESHOLD){
+            purchaseAmount = purchaseAmount + ACCESSORY_PRICE;
+            calculated_purchaseAmount = purchaseAmount + purchaseAmount * TAX_RATE;
+            alert(`Calculated purchase amount is $ ${calculated_purchaseAmount}`);
+        }
+        else{
+            alert("no money");
+        }
+    }
+    bank_balance=bank_balance -calculated_purchaseAmount;
+    if(bank_balance < calculated_purchaseAmount){
+        alert("You cannot afford it");
+    }
+    else{
+        alert("Phone bought");
+    }
+    
+}
 // your code goes here
 
 // ⛑ Answer of the above will `$334.76`.
